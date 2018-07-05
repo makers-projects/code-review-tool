@@ -1,0 +1,5 @@
+<%= form_for @code do |form| %>
+  <p><%= form.label :content %></p>
+  <p><%= form.text_area(:content, rows: 4, cols: 80)%></p>
+  <p><%= form.submit "Submit" %></p>
+<% end %>

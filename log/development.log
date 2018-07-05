@@ -316,3 +316,225 @@ Processing by CodeController#index as HTML
 Completed 200 OK in 25ms (Views: 19.8ms)
 
 
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 16:25:52 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  Rendered code/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 777ms (Views: 419.4ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 16:50:42 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  Rendered code/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 121ms (Views: 93.4ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 16:51:15 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  Rendered code/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 28.1ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 16:52:37 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  Rendered code/index.html.erb within layouts/application (35.0ms)
+Completed 500 Internal Server Error in 58ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: 
+    3: <%= form_for @code do |form| %>
+    4:   <p><%= form.label :message %></p>
+    5:   <p><%= form.text_area(:message, rows: 4, cols: 80)%></p>
+    6:   <p><%= form.submit "Submit" %></p>
+  
+app/views/code/index.html.erb:3:in `_app_views_code_index_html_erb___1426446640035992749_70142995186960'
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 16:52:58 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  Rendered code/index.html.erb within layouts/application (598.8ms)
+Completed 500 Internal Server Error in 617ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f96da7caad8>:0x00007f96dbab5580>
+Did you mean?  fork):
+    1: 
+    2: 
+    3: 
+    4:   <p><%= form.label :message %></p>
+    5:   <p><%= form.text_area(:message, rows: 4, cols: 80)%></p>
+    6:   <p><%= form.submit "Submit" %></p>
+    7: <%= markdown("#TEST") %>
+  
+app/views/code/index.html.erb:4:in `_app_views_code_index_html_erb___1426446640035992749_70142953631540'
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8508758062450717470)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCodes (20180705155424)
+  [1m[35m (10.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (82.4ms)[0m  [1m[35mCREATE TABLE "codes" ("id" bigserial primary key, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180705155424"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8508758062450717470)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:00:00 +0100
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  Rendered code/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 317ms (Views: 298.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:02:32 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (4.8ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (170.2ms)
+Completed 200 OK in 251ms (Views: 193.1ms | ActiveRecord: 35.9ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:04:35 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (2.0ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 102ms (Views: 78.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:05:06 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (0.7ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 63ms (Views: 58.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:06:14 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (1.7ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 222ms (Views: 212.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:06:31 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (1.2ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 76ms (Views: 63.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:06:33 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (3.0ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 34ms (Views: 27.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:07:11 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (0.5ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 53ms (Views: 47.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:08:14 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (1.3ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 156ms (Views: 148.7ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mCode Load (0.5ms)[0m  [1m[34mSELECT  "codes".* FROM "codes" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.0ms)[0m  [1m[32mINSERT INTO "codes" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-07-05 16:23:25.786433"], ["updated_at", "2018-07-05 16:23:25.786433"]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCode Load (1.9ms)[0m  [1m[34mSELECT  "codes".* FROM "codes" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "codes" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-07-05 16:24:39.433956"], ["updated_at", "2018-07-05 16:24:39.433956"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCode Load (0.7ms)[0m  [1m[34mSELECT  "codes".* FROM "codes" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCode Load (0.6ms)[0m  [1m[34mSELECT  "codes".* FROM "codes" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:27:50 +0100
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (0.9ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 370ms (Views: 342.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/code/new" for 127.0.0.1 at 2018-07-05 17:27:54 +0100
+Processing by CodeController#new as HTML
+  Rendering code/new.html.erb within layouts/application
+  Rendered code/new.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @code do |form| %>
+    2:   <p><%= form.label :content %></p>
+    3:   <p><%= form.text_area(:content, rows: 4, cols: 80)%></p>
+    4:   <p><%= form.submit "Submit" %></p>
+  
+app/views/code/new.html.erb:1:in `_app_views_code_new_html_erb___2218134994476184830_70125279957700'
+Started GET "/code/new" for 127.0.0.1 at 2018-07-05 17:29:38 +0100
+Processing by CodeController#new as HTML
+Completed 400 Bad Request in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: code):
+  
+app/controllers/code_controller.rb:13:in `code_params'
+app/controllers/code_controller.rb:7:in `new'
+Started GET "/code/new" for 127.0.0.1 at 2018-07-05 17:31:34 +0100
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CodeController#new as HTML
+Completed 400 Bad Request in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: code):
+  
+app/controllers/code_controller.rb:13:in `code_params'
+app/controllers/code_controller.rb:7:in `new'
+Started GET "/code/new" for 127.0.0.1 at 2018-07-05 17:32:09 +0100
+Processing by CodeController#new as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `build' for #<Class:0x00007ffebadfe088>):
+  
+app/controllers/code_controller.rb:7:in `new'
+Started GET "/code/new" for 127.0.0.1 at 2018-07-05 17:32:41 +0100
+Processing by CodeController#new as HTML
+Completed 500 Internal Server Error in 276ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `codes' for #<CodeController:0x00007ffebba24b50>):
+  
+app/controllers/code_controller.rb:7:in `new'
+Started GET "/code/index" for 127.0.0.1 at 2018-07-05 17:33:01 +0100
+Processing by CodeController#index as HTML
+  Rendering code/index.html.erb within layouts/application
+  [1m[36mCode Load (1.7ms)[0m  [1m[34mSELECT "codes".* FROM "codes" ORDER BY updated_at DESC[0m
+  Rendered code/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 320ms (Views: 306.9ms | ActiveRecord: 4.9ms)
+
+
